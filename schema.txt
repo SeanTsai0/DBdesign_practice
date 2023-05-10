@@ -1,0 +1,59 @@
+customer (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `address` text NOT NULL,
+  `sex_id` tinyint(1) NOT NULL,
+  `birth` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	
+
+
+department (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	
+
+
+sex (
+  `id` tinyint(1) NOT NULL,
+  `type` varchar(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	
+
+
+employee (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `dept_id` tinyint(4) NOT NULL,
+  `salary` int(11) NOT NULL,
+  `birth` date NOT NULL,
+  `sex_id` tinyint(1) NOT NULL,
+  `position_id` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	
+
+position (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	
+
+product (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `inventory` smallint(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	
+
+sales_order (
+  `id` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `product_id` tinyint(4) NOT NULL,
+  `buyer_id` mediumint(9) NOT NULL,
+  `salesperson_id` smallint(6) NOT NULL,
+  `amount` tinyint(4) NOT NULL,
+  `sales_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	
+	
